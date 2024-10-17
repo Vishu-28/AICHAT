@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  h1(style="margin-top:80px")
+  .container
+    h1 Review Your Experience
+    p.lead
+      span(style='font-size: 16px;') Please share your feedback below.
+      br // Add a line break for spacing
+      
+    form(action="/submit_review", method="POST")
+      .form-group
+        label(for="name", style='font-size: 16px;') Name : 
+        input.form-control(type="text", id="name", name="name", placeholder="Enter your name", required)
+      .form-group
+        label(for="email", style='font-size: 16px;') Email : 
+        input.form-control(type="email", id="email", name="email", placeholder="Enter your email ID", required)
+      .form-group
+        label(for="rating", style='font-size: 16px;') Rating (1-5) : 
+        input.form-control(type="number", id="rating", name="rating", min=1, max=5, placeholder="Enter a rating between 1 and 5", required)
+      .form-group
+        label(for="review", style='font-size: 16px;') Review : 
+        textarea.form-control(id="review", name="review", rows=5, cols=30, placeholder="Enter your review here", required)
+        
+      // Submit button that redirects to homepage without storing review
+      a.btn.btn-primary(href='/', style='margin-right: 10px;') Submit
+      a.btn.btn-default(role='button', href='/') Cancel

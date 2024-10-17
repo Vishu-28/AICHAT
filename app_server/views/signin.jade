@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1(style="margin-top:80px")
+  .container
+    h1 Login
+    p.lead
+      span(style='font-size: 16px;') Sign in with your account. Don't have one?
+      br // Add a line break for spacing
+      a(href='/register', style='color: red; font-size: 16px;') Register Now. 
+    .form-group
+      label(for='username', style='font-size: 16px;') Username 
+      input.form-control(type='text', id='username', name='username', placeholder='Enter a username')
+    .form-group
+      label(for='password', style='font-size: 16px;') Password 
+      input.form-control(type='password', id='password', name='password', placeholder='Enter a password')
+    // Change Submit to an anchor tag
+    a.btn.btn-primary(href='/') Submit
+    &nbsp;
+    a.btn.btn-default(role='button', href='/') Cancel
+
+    

@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= message || 'Error'  // Ensure a title is defined
+    link(rel='stylesheet', href='/stylesheets/style.css') // Adjust the stylesheet path as needed
+  body
+    block content
+      h1= message
+      h2= error.status
+      pre #{error.stack}
+
+      

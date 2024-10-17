@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width', initial-scale=1.0)
+    title= title
+
+    link(rel='stylesheet', href='/bootstrap/css/amelia.bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+
+  body
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          a.navbar-brand(href='/') AI CHAT
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-main')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #navbar-main.navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li 
+              a(href='/about/') <b> About </b>
+            li 
+              a(href='/signin') <b> SignIn </b>
+            li 
+              a(href='/review') <b>Review </b>
+
+    .container
+      block content
+      footer
+      br 
+      .row
+        .col-xs-12 
+
+    // Chatbot Iframe
+    .chatbot-container(style='position: fixed; bottom: 0; right: 0; width: 400px; height: 700px; z-index: 9999;')
+      iframe(src="https://www.chatbase.co/chatbot-iframe/2k5AOJLx0BTHp62f64SEK", width="100%", style="height: 100%; border: none; min-height: 700px", frameborder="0")
+
+    // Scripts
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script.
+      // No additional JavaScript needed for button functionality
+
+    // Embed Chatbot Script
+    script.
+      window.embeddedChatbotConfig = { chatbotId: "2k5AOJLx0BTHp62f64SEK", domain: "www.chatbase.co" };
+    script(src="https://www.chatbase.co/embed.min.js", chatbotId="2k5AOJLx0BTHp62f64SEK", domain="www.chatbase.co", defer)
+    

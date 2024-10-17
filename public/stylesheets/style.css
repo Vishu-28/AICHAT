@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(112, 118, 119); /* Set to the color you want */
+}
+.navbar {
+    background-color: #ff041d; /* Bootstrap primary blue */
+}
+
+.navbar .navbar-brand, 
+.navbar .navbar-nav .nav-link {
+    color: rgb(0, 0, 0); /* Text color inside the navbar */
+}
+
+.navbar .navbar-nav .nav-link:hover {
+    color: #0056b3; /* Hover color */
+}
+
+body {
+    background-color: lightgray; /* Set the background color to white */
+    color: black;            /* Set the text color to white */
+}
+.strapline {
+    color: #010000; /* Replace with the desired color */
+    font-weight: bold; /* Optional: Adjust style */
+    font-size: 20px; /* Adjust the font size as needed */
+    }
+    .register-link {
+         color: black; /* Change the text color to black */
+        }
+        
+        .register-link:hover {
+         color: #0056b3; /* Optional: Change hover color if needed */
+        }
+        .form-control {
+            width: 100%; /* Makes input fields take full width of their parent */
+            max-width: 500px; /* Adjusts max width as needed */
+            margin-bottom: 15px; /* Adds some spacing between fields */
+          }
+
+          #chatbot1 {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+          }
+          
+          #chatbot2 {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+          }
+          
+          #chatbot3 {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+          }
+          

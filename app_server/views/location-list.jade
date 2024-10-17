@@ -1,0 +1,37 @@
+extends layout
+include _includes/sharedHTMLfunctions
+
+block content
+  #banner.page-header
+    .row
+      .col-lg-6
+        h1= pageHeader.title
+        small(class="strapline") &nbsp;#{pageHeader.strapline}
+  .row
+    .col-xs-12.col-sm-8
+      .row.list-group
+        each location in locations
+          // Apply inline style to change box background to white for specific locations
+          .col-xs-12.list-group-item(style=(location.name === 'MY JIO' || location.name === 'AIRTEL EXPRESS' || location.name === 'VODAFONE IDEA' ? 'background-color: white;' : 'background-color: green;'))
+            h4 
+              // Check the location name and set the href accordingly
+              a(href=(location.name === 'MY JIO' ? 'https://www.jio.com' : location.name === 'AIRTEL EXPRESS' ? 'https://www.airtel.in' : location.name === 'VODAFONE IDEA' ? 'https://www.myvi.in' : '/locations'), 
+                style=(location.name === 'MY JIO' || location.name === 'AIRTEL EXPRESS' || location.name === 'VODAFONE IDEA' ? 'color: red; font-weight: normal; font-style: normal;' : ''))= location.name
+              small &nbsp;
+
+              // Inline star rating implementation
+              span.rating
+                each i in [1, 2, 3, 4, 5]
+                  if i <= location.rating
+                    span(style="color: gold;") &#9733; 
+                  else
+                    span(style="color: grey;") &#9734; 
+
+              span.badge.pull-right.badge-default= location.distance
+            p.address= location.address
+
+            // Display online service and timings without yellow box
+            p
+              | Online Service | #{location.facilities[1]} | #{location.facilities[2]}
+
+              
